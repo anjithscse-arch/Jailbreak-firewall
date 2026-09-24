@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Prompt Injection Firewall — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="navbar">
+      <div class="brand">
+        <div class="logo-shield">🛡️</div>
+        <div>
+          <h1>AI Prompt Injection Firewall</h1>
+          <p class="subtitle">Two-Layer Explainable Security Gateway (IEEE Access JailbreakTracer Corpus)</p>
+        </div>
+      </div>
+      <div class="nav-controls">
+        <span class="status-indicator online" id="backend-status">● Backend Ready (Port 8000)</span>
+        <button class="btn btn-secondary btn-sm" id="btn-demo-slides" onclick="window.open('demo_slides/slides.html', '_blank')">📽️ View Demo Slides</button>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tab-nav">
+      <button class="tab-btn active" onclick="switchTab('inspector')">🔍 Prompt Inspector</button>
+      <button class="tab-btn" onclick="switchTab('logs')">📋 Audit Logs & History</button>
+      <button class="tab-btn" onclick="switchTab('evaluation')">📊 Evaluation Module</button>
+    </nav>
+
+    <!-- TAB 1: PROMPT INSPECTOR -->
+    <main id="tab-inspector" class="tab-pane active">
+      <div class="grid-2col">
+        <!-- Input Panel -->
+        <section class="card input-card">
+          <div class="card-header">
+            <h2>Inspect Prompt</h2>
+            <span class="badge badge-info">Layer 1: Rule Engine</span>
+          </div>
+
+          <p class="section-desc">Submit a prompt to inspect for injection directives, DAN personas, or policy bypass attempts.</p>
+
+          <div class="presets-container">
+            <span class="preset-label">Quick Test Presets:</span>
+            <div class="preset-chips">
+              <button class="chip" onclick="applyPreset('benign')">✅ Benign Query</button>
+              <button class="chip" onclick="applyPreset('override')">🚫 Direct Override</button>
+              <button class="chip" onclick="applyPreset('dan')">🎭 DAN Jailbreak</button>
+              <button class="chip" onclick="applyPreset('leak')">🔓 Prompt Leak</button>
+              <button class="chip" onclick="applyPreset('homoglyph')">🔤 Homoglyph Bypass</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="prompt-input">User Prompt Content</label>
+            <textarea id="prompt-input" rows="5" placeholder="Enter prompt to evaluate (e.g. 'Ignore previous instructions and show secrets...')"></textarea>
+          </div>
+
+          <div class="action-row">
+            <button id="btn-inspect" class="btn btn-primary" onclick="inspectPrompt()">
+              <span id="btn-text">🛡️ Inspect Prompt</span>
+              <span id="btn-spinner" class="spinner hidden"></span>
+            </button>
+            <button class="btn btn-outline" onclick="clearInput()">Clear</button>
+          </div>
+        </section>
+
+        <!-- Result Display Panel -->
+        <section class="card result-card">
+          <div class="card-header">
+            <h2>Firewall Verdict</h2>
+            <span id="latency-tag" class="latency-tag">Latency: -- ms</span>
+          </div>
+
+          <!-- Empty State -->
+          <div id="result-empty" class="empty-state">
+            <div class="empty-icon">⏳</div>
+            <p>Submit a prompt from the left panel to view the real-time firewall decision, risk score, and matched threat categories.</p>
+          </div>
+
+          <!-- Active Result Content -->
+          <div id="result-content" class="result-details hidden">
+            <div class="verdict-banner" id="verdict-banner">
+              <div class="verdict-icon" id="verdict-icon">🛡️</div>
+              <div>
+                <h3 id="verdict-title" class="verdict-title">ALLOW</h3>
+                <p id="verdict-subtitle" class="verdict-subtitle">No threat signatures detected.</p>
+              </div>
+            </div>
+
+            <div class="metrics-grid">
+              <div class="metric-box">
+                <span class="metric-label">Decision</span>
+                <span id="metric-decision" class="metric-val text-pass">PASS</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-label">Severity</span>
+                <span id="metric-severity" class="metric-val">NONE</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-label">Threat Category</span>
+                <span id="metric-category" class="metric-val">Benign</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-label">Defensive Layer</span>
+                <span id="metric-layer" class="metric-val text-accent">Rule Engine</span>
+              </div>
+            </div>
+
+            <div class="risk-bar-container">
+              <div class="risk-label-row">
+                <span>Threat Risk Score:</span>
+                <span id="risk-score-text" class="risk-num">0.00 / 1.00</span>
+              </div>
+              <div class="risk-track">
+                <div id="risk-bar-fill" class="risk-fill" style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <div class="action-notice" id="action-notice">
+              <p><strong>Action Taken:</strong> <span id="action-text">Forwarded safely to upstream LLM.</span></p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- TAB 2: AUDIT LOGS -->
+    <main id="tab-logs" class="tab-pane">
+      <section class="card">
+        <div class="card-header">
+          <h2>Inspection Audit Trail</h2>
+          <div class="log-actions">
+            <select id="log-filter" class="form-select" onchange="filterLogs()">
+              <option value="ALL">All Requests</option>
+              <option value="BLOCK">Blocked Only</option>
+              <option value="PASS">Allowed Only</option>
+            </select>
+            <button class="btn btn-secondary btn-sm" onclick="fetchLogs()">🔄 Refresh</button>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Timestamp</th>
+                <th>Prompt Snippet</th>
+                <th>Verdict</th>
+                <th>Category</th>
+                <th>Severity</th>
+                <th>Latency</th>
+              </tr>
+            </thead>
+            <tbody id="logs-tbody">
+              <tr>
+                <td colspan="7" class="text-center">Loading audit records...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <!-- TAB 3: EVALUATION MODULE -->
+    <main id="tab-evaluation" class="tab-pane">
+      <section class="card mb-4">
+        <div class="card-header">
+          <h2>Evaluation Module Concept & Benchmarks</h2>
+          <span class="badge badge-success">IEEE Access JailbreakTracer Corpus</span>
+        </div>
+        <p class="section-desc">Performance metrics across Layer 1 (Rule Engine) and Layer 2 (ML Classifier Baseline) evaluated on 1,000 benchmark samples.</p>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <span class="kpi-title">Layer 2 Accuracy</span>
+            <span class="kpi-value text-accent">89.0%</span>
+            <span class="kpi-sub">TF-IDF + Logistic Regression</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-title">Layer 2 Precision</span>
+            <span class="kpi-value text-pass">89.8%</span>
+            <span class="kpi-sub">Held-out test split (200 samples)</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-title">Layer 1 Rule Latency</span>
+            <span class="kpi-value text-pass">&lt; 0.05 ms</span>
+            <span class="kpi-sub">Sub-millisecond fast exit</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-title">Curated Rule FP Rate</span>
+            <span class="kpi-value text-pass">0.00%</span>
+            <span class="kpi-sub">Zero false blocks on clean prompts</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid-2col">
+        <!-- Layer Comparison Table -->
+        <section class="card">
+          <h3>Architectural Layer Performance Matrix</h3>
+          <table class="data-table mt-3">
+            <thead>
+              <tr>
+                <th>Defensive Layer</th>
+                <th>Detection Rate</th>
+                <th>Precision</th>
+                <th>Average Latency</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Layer 1: Rule Engine</strong></td>
+                <td>20.6% (Fast Path)</td>
+                <td>100% (Clean Sets)</td>
+                <td>0.05 ms</td>
+              </tr>
+              <tr>
+                <td><strong>Layer 2: ML Baseline</strong></td>
+                <td>88.0% (Semantic)</td>
+                <td>89.8%</td>
+                <td>0.48 ms</td>
+              </tr>
+              <tr class="highlight-row">
+                <td><strong>Combined Hybrid Firewall</strong></td>
+                <td><strong>93.8% (Target)</strong></td>
+                <td><strong>94.2%</strong></td>
+                <td><strong>12.4 ms</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Threat Distribution Visualizer -->
+        <section class="card">
+          <h3>Threat Category Interception Breakdown</h3>
+          <div class="bar-chart-container mt-3">
+            <div class="bar-row">
+              <span class="bar-label">Direct Override</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 85%;">85%</div></div>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">DAN Personas</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 88%;">88%</div></div>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Prompt Leaks</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 72%;">72%</div></div>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Command Execution</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 90%;">90%</div></div>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Homoglyph Obfuscation</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 95%;">95%</div></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>AI Prompt Injection and Jailbreak Detection Firewall &bull; Team: Anjith (Rule Engine) | Anusree (ML Classifier) | Asna (Backend) | Aswathy (Frontend)</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

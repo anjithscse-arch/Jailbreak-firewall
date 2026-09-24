@@ -1,0 +1,50 @@
+# Environments
+.env
+.env.local
+.env.*.local
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Models & Artifacts cache (keep gitkeep)
+backend/app/ml/artifacts/*.joblib
+backend/app/ml/artifacts/*.json
+!backend/app/ml/artifacts/.gitkeep
+backend/models/*.joblib
+!backend/models/.gitkeep
+
+# Reports & uploads
+backend/reports/*.json
+backend/reports/*.csv
+backend/reports/*.png
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Large uncompressed datasets (>100MB, use zip instead)
+backend/data/jailbreaktracer/forbidden_questions/*.csv
+
+# Node / Vite
+node_modules/
+dist/
+build/
+*.tsbuildinfo
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo

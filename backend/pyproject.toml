@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-prompt-firewall"
+version = "1.0.0"
+description = "AI Prompt Injection and Jailbreak Detection Firewall"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Security Research Team" }
+]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["app/tests"]
+pythonpath = ["."]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::UserWarning",
+]

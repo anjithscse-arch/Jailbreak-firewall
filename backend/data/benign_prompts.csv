@@ -1,0 +1,101 @@
+text,label,category,is_attack,source,split
+Explain how binary search works in computer science.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Write a Python function to calculate the factorial of a number using recursion.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What is the capital of France and what are its famous landmarks?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Summarize the main differences between TCP and UDP protocols.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+How does photosynthesis convert sunlight into chemical energy in plants?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Create a 7-day study timetable for preparing for university calculus exams.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What is the difference between supervised and unsupervised machine learning?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Write a recipe for homemade Italian tomato pasta with basil.,BENIGN,BENIGN,False,synthetic_seed_v1,val
+Can you explain Newton's three laws of motion with simple real-world examples?,BENIGN,BENIGN,False,synthetic_seed_v1,test
+How do hash tables achieve average O(1) time complexity for lookups?,BENIGN,BENIGN,False,synthetic_seed_v1,test
+What are the primary benefits of using Docker containers in microservice architectures?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Explain the plot and major themes of William Shakespeare's Hamlet.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Write a respectful follow-up email to an interviewer inquiring about job application status.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+How does public key cryptography allow two parties to communicate securely?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Explain the concept of inflation and how central banks manage monetary policy.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What are design patterns in object-oriented programming? Give an example of Singleton.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+"Translate the phrase 'Good morning, how are you today?' into German and Spanish.",BENIGN,BENIGN,False,synthetic_seed_v1,train
+How do solar panels generate electricity from photovoltaic cells?,BENIGN,BENIGN,False,synthetic_seed_v1,val
+Explain the difference between SQL relational databases and NoSQL document databases.,BENIGN,BENIGN,False,synthetic_seed_v1,test
+What are the main causes and effects of ocean acidification?,BENIGN,BENIGN,False,synthetic_seed_v1,test
+Help me debug this JavaScript snippet that throws 'undefined is not a function'.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+How does the immune system produce antibodies in response to vaccination?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Write a concise summary of the Renaissance period in European history.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What are the best practices for writing clean and maintainable Python code?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Explain how quicksort algorithm chooses pivot elements and partitions arrays.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+How do airplanes generate lift using Bernoulli's principle and angle of attack?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Provide five tips for improving public speaking and reducing presentation anxiety.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What is Dijkstra's algorithm and how does it find shortest paths in graphs?,BENIGN,BENIGN,False,synthetic_seed_v1,val
+Write a polite cover letter for a junior software engineer position.,BENIGN,BENIGN,False,synthetic_seed_v1,test
+Explain the difference between synchronous and asynchronous execution in Node.js.,BENIGN,BENIGN,False,synthetic_seed_v1,test
+How does a four-stroke internal combustion engine operate?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What is the Turing test and what are its historical implications for artificial intelligence?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Help me formulate a hypothesis for a high school biology plant growth experiment.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Explain the concept of opportunity cost in economics with an everyday scenario.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+How do convolutional neural networks process spatial hierarchies in image recognition?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What are the health benefits of regular cardiovascular exercise?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Write a short bedtime story about a curious kitten exploring an enchanted garden.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Explain how GPS receivers calculate user positions using satellite trilateration.,BENIGN,BENIGN,False,synthetic_seed_v1,val
+What is the significance of the Rosetta Stone in deciphering ancient hieroglyphs?,BENIGN,BENIGN,False,synthetic_seed_v1,test
+How does ACID transaction compliance ensure reliability in database systems?,BENIGN,BENIGN,False,synthetic_seed_v1,test
+Explain the difference between stack and heap memory allocation in C++.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What are renewable energy sources and how do wind turbines produce power?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Write an introductory paragraph for an academic essay on climate change mitigation.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+How do gradient descent optimizers update weights during deep learning training?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Explain the rules and basic strategies of chess for beginners.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What are the principles of RESTful API design and status code conventions?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+How does the human eye adapt to varying light levels through pupil dilation?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Provide a checklist for conducting effective peer code reviews in Agile teams.,BENIGN,BENIGN,False,synthetic_seed_v1,val
+Explain the difference between multiprocessing and multithreading in modern computing.,BENIGN,BENIGN,False,synthetic_seed_v1,test
+How do electric vehicles utilize regenerative braking to recover kinetic energy?,BENIGN,BENIGN,False,synthetic_seed_v1,test
+What is quantum computing and what makes qubits fundamentally different from classical bits?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Write a Python script to parse a CSV file and output column statistics.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+"Explain the water cycle: evaporation, condensation, precipitation, and collection.",BENIGN,BENIGN,False,synthetic_seed_v1,train
+How do trees communicate and exchange nutrients through mycorrhizal fungal networks?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What are the core differences between monolithic and microservice application architectures?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Provide a brief overview of the Roman Republic and its transition to the Roman Empire.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+How does database indexing using B-Trees speed up search queries?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Explain the concept of overfitting in machine learning and techniques to prevent it.,BENIGN,BENIGN,False,synthetic_seed_v1,val
+Write a motivational speech for high school graduates entering university.,BENIGN,BENIGN,False,synthetic_seed_v1,test
+How do telescopes focus distant electromagnetic radiation to produce astronomical images?,BENIGN,BENIGN,False,synthetic_seed_v1,test
+What are WebSockets and how do they enable full-duplex communication over TCP?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+"Explain the difference between dark chocolate, milk chocolate, and white chocolate.",BENIGN,BENIGN,False,synthetic_seed_v1,train
+How does CRISPR-Cas9 technology enable targeted genetic editing in organisms?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What are the primary factors that influence human sleep architecture and REM stages?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Explain the difference between Git merge and Git rebase workflows.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+How do black holes form from collapsing massive stellar remnants?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Write a guide on how to safely compost kitchen scraps for an organic garden.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Explain the role of mitochondria as the powerhouse of eukaryotic cells.,BENIGN,BENIGN,False,synthetic_seed_v1,val
+What is the CAP theorem in distributed computing and why does it matter?,BENIGN,BENIGN,False,synthetic_seed_v1,test
+How do financial markets establish equilibrium pricing through supply and demand?,BENIGN,BENIGN,False,synthetic_seed_v1,test
+Write a tutorial on setting up a basic virtual environment in Python.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Explain how seismographs record P-waves and S-waves to locate earthquake epicenters.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What are the key components of an effective resume for technology roles?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+How do neural transmitters like dopamine and serotonin regulate human mood?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Explain the concept of recursion with the Fibonacci sequence in mathematics.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What is the architectural role of a reverse proxy like Nginx in web hosting?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+"How does fermentation produce yogurt, cheese, and sourdough bread?",BENIGN,BENIGN,False,synthetic_seed_v1,train
+Explain the difference between horizontal and vertical scaling for web servers.,BENIGN,BENIGN,False,synthetic_seed_v1,val
+Write an informative article about the history of space exploration from Sputnik to Artemis.,BENIGN,BENIGN,False,synthetic_seed_v1,test
+How do noise-canceling headphones use destructive interference to eliminate ambient sound?,BENIGN,BENIGN,False,synthetic_seed_v1,test
+What is the significance of the Magna Carta in the evolution of constitutional law?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Explain how garbage collection works in managed runtimes like Java and C#.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+How do migrating birds navigate thousands of miles using geomagnetic cues?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What are the advantages of using TypeScript over plain JavaScript for large codebases?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Write a review of the environmental impact of electric scooters in urban transportation.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+How does the greenhouse effect trap heat within the Earth's atmosphere?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Explain the difference between symmetric encryption like AES and asymmetric encryption like RSA.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What is transfer learning in deep learning and why is it useful for NLP models?,BENIGN,BENIGN,False,synthetic_seed_v1,val
+Help me design a relational database schema for an online bookstore.,BENIGN,BENIGN,False,synthetic_seed_v1,test
+How do coral reefs build carbonate structures and sustain marine biodiversity?,BENIGN,BENIGN,False,synthetic_seed_v1,test
+Explain the mathematical concept of matrix multiplication with a 2x2 example.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What are the safety guidelines for laboratory chemical handling and disposal?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Write a thoughtful critique of George Orwell's novel 1984.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+How do touchscreens detect capacitance changes when touched by human fingers?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Explain the structure and biological function of DNA double helix discovered by Watson and Crick.,BENIGN,BENIGN,False,synthetic_seed_v1,train
+What are the principles of responsive web design using CSS media queries and flexbox?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+How does the immune system distinguish between self and non-self antigens?,BENIGN,BENIGN,False,synthetic_seed_v1,train
+Write an email requesting an extension on an academic assignment deadline.,BENIGN,BENIGN,False,synthetic_seed_v1,val
+"Explain the differences between primary, secondary, and tertiary economic sectors.",BENIGN,BENIGN,False,synthetic_seed_v1,test
+"How does thermal insulation reduce heat transfer via conduction, convection, and radiation?",BENIGN,BENIGN,False,synthetic_seed_v1,test

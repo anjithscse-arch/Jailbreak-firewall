@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #24344d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* Cyber cards and glow effects */
+.glass-panel {
+  background: rgba(19, 29, 49, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(36, 52, 77, 0.8);
+}
+
+.glass-panel-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 4px 20px -2px rgba(59, 130, 246, 0.15);
+}
+
+.badge-glow-allow {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.35);
+}
+
+.badge-glow-block {
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.35);
+}
+
+.badge-glow-review {
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.35);
+}
