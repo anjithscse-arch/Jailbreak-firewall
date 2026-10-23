@@ -103,3 +103,34 @@ Where:
 
 > [!CAUTION]
 > Under no circumstances is a prompt with a `BLOCK` verdict allowed to transmit across the network to an upstream LLM API. The firewall architecture guarantees that the LLM gateway function is bypassed entirely upon threat detection, mitigating token consumption and preventing LLM context compromise.
+
+---
+
+## 5. System Use Case Diagram (Minimal)
+
+```mermaid
+flowchart LR
+    User["👤 User / Client"]
+    Admin["🛡️ Security Admin"]
+    LLM["🤖 Upstream LLM"]
+
+    subgraph Firewall ["AI Prompt Firewall"]
+        UC1(["Submit Prompt / Chat"])
+        UC2(["Inspect & Detect Attacks"])
+        UC3(["Block Malicious Prompt"])
+        UC4(["Forward Safe Prompt"])
+        UC5(["Manage Detection Rules"])
+        UC6(["View Logs & Dashboard"])
+    end
+
+    User --> UC1
+    UC1 -.->|«include»| UC2
+    UC2 -.->|«extend»| UC3
+    UC2 -.->|«extend»| UC4
+    UC4 --> LLM
+
+    Admin --> UC5
+    Admin --> UC6
+```
+
+
